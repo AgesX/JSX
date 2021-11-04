@@ -6,13 +6,48 @@ function _instanceof(left, right) {
     }
 }
 
+
+
+
+
+
+
+// 做类型的校验， 的函数
+
+
 function _classCallCheck(instance, Constructor) {
     if (! _instanceof(instance, Constructor)) {
         throw new TypeError("Cannot call a class as a function");
     }
 }
 
+
+
+
+
+
+
 function _defineProperties(target, props) {
+
+    /*
+        做一个遍历，
+
+
+
+        遍历的是，
+
+
+        [{
+            key: "hello",
+            value: function hello() {
+                return this.name;
+            }
+        }]
+    
+    
+    */
+
+
     for (var i = 0; i < props.length; i++) {
         var descriptor = props[i];
         descriptor.enumerable = descriptor.enumerable || false;
@@ -24,6 +59,13 @@ function _defineProperties(target, props) {
     }
 }
 
+
+
+
+
+//  protoProps， 对象属性
+
+//  staticProps， 类属性
 function _createClass(Constructor, protoProps, staticProps) {
     if (protoProps) 
         _defineProperties(Constructor.prototype, protoProps);
@@ -37,6 +79,14 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /*  */
 var Dog = /*#__PURE__*/
+
+
+
+
+// 自执行函数，
+
+
+// 返回 Dog 函数
 function () {
     "use strict";
 
