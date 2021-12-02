@@ -36,19 +36,43 @@ function mockAjax(method, url, data, success , error){
 
 
 
-
+// 回调地狱
 
 function getList(userK){
 
 
-    mockAjax('GET', '/role?usrID=' + userK, null , (data) => {
+    mockAjax('GET', '/role?usrID=' + userK, null ,
+        (data) => {
+                console.log(data);
 
-    }, (msg) => {
+                
+                mockAjax('GET', '/product/list?usrID=' + data.roleK, null ,
+                    (datum) => {
+                            console.log(datum);
+                    }, (error) => {
+                            console.log(error);
+                    } )
 
-    } )
+
+        }, (err) => {
+                console.log(err);
+        } )
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
