@@ -40,37 +40,37 @@ function mockAjax(method, url, data){
 
 
 
-
-
-
-// 回调地狱
-// 的改造
-
-
-
-
-// 串形操作
-// 执行完成，第一个任务后，
-// 才能执行后续任务
-
 function getList(userK){
 
-    let pro = mockAjax('GET', '/role?usrID=' + userK, null)
-    pro.then( (data) => {
-      
-	    console.log('1 >>> ')
-        console.log(data);
 
-        // 返回新的 Promise 对象，去进行订阅 , then 操作
-        return mockAjax('GET', '/product/list?usrID=' + data.roleK, null);
-    }).then( (secondData) => {
-        console.log('2 >>> ');
-        console.log(secondData);
-    }).catch(
-        (firstErr) => {
-            console.log(firstErr);
+
+    let getUsr = mockAjax('GET', '/user?usrID=' + userK, null)
+
+    let getRole = mockAjax('GET', '/role?usrID=' + userK, null)
+
+
+//  .all(), 
+//  是一个函数
+
+//  可以传进去，一个数组
+
+// 数组里面的元素 （ 每一个 ），都是 Promise 的实例
+
+    Promise.all([getUsr, getRole]).then( (results) => {
+
+         console.log(results);
+    }).catch( (err) => {
+            console.log(err);
         }
     );
+
+
+
+
+
+
+
+
 
 }
 
@@ -79,8 +79,14 @@ function getList(userK){
 
 
 
-getList(666);
 
+
+getList(66666);
+
+
+
+
+// 并发多个请求，都完成之后，再做事情
 
 
 
