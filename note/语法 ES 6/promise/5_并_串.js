@@ -16,11 +16,11 @@ function mockAjax(method, url, data){
                     data: []
                 };
 
-                resolve(result);
+                resolve(result + '\n' + url + '\n\n');
             }
             else{
 
-                reject('接口地址错误');
+                reject('接口地址错误' + '\n' + url + '\n\n');
             }
 
 
@@ -60,6 +60,10 @@ function getList(userK){
 
          console.log(results);
     }).catch( (err) => {
+            // 失败，
+            // 返回的事，最先失败的 promise 的值
+
+
             console.log(err);
         }
     );
