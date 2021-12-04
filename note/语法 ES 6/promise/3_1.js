@@ -7,7 +7,7 @@ let pro = new Promise( (resolve, reject) => {
         // 1 ～ 10 的，一个随机数
         let time = Math.random() * 10;
 
-        if( time < 5 ){
+        if( time < 1 ){
             resolve('下面  then  函数的数据: ' + time);
         }
         else{
@@ -33,37 +33,10 @@ pro.then( (data) => {
 
     console.log('data:  ', data);
 
-},  (ggg) => {
-
-    console.log('then 的第二个入参:  ', ggg);
-
-});
-
-
-
-pro.catch( (err) => { 
+})
+.catch( (err) => { 
     // 对应上面的 reject 方法
 
     console.log('wrong:  ', err);
 
 });
-
-
-
-// catch, 只是 then 方法的，语法糖
-// catch，就是 then 方法的，第二个参数回调
-
-
-
-
-
-// promise 的 then 和 catch， 可以链式调用
-
-
-
-
-
-
-
-
-
