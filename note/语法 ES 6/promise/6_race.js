@@ -58,9 +58,9 @@ function getList(userK){
 
 // 数组里面的元素 （ 每一个 ），都是 Promise 的实例
 
-    Promise.race([getUsr, getRole]).then( (results) => {
+    Promise.race([getUsr, getRole]).then( (result) => {
 
-         console.log(results);
+         console.log(result);
     }).catch( (err) => {
             // 失败，
             // 返回的事，最先失败的 promise 的值
@@ -92,17 +92,14 @@ function getList(userK){
 
 function timeoutAjax(promise, ms = 500){
 
-
-
-
-
-
-
-
-
     return Promise.race([promise, new Promise( (resolve, reject) => {
 
+            setTimeout( () => {
 
+                    reject(new Error('操作失败，请求超时'));
+              
+
+            }, 500)
 
 
 
@@ -112,12 +109,32 @@ function timeoutAjax(promise, ms = 500){
 
 
 
-getList(66666);
+// getList(66666);
 
 
 
 
 // 并发多个请求，都完成之后，再做事情
+
+
+
+let getUsr = mockAjax('GET', '/user?usrID=' + 888, null)
+
+
+
+timeoutAjax(getUsr).then( (result) => {
+
+    console.log(result);
+}).catch( (err) => {
+
+       console.log(err);
+   }
+);
+
+
+
+
+
 
 
 
