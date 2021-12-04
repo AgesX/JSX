@@ -43,4 +43,14 @@ pro.then( (data) => {
 
     console.log('wrong:  ', err);
 
+}).finally( () => {
+
+    console.log('  结束啦: 可以在这个时机，清除数据');
+
+
 });
+
+
+
+
+
