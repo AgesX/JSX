@@ -99,7 +99,7 @@ function timeoutAjax(promise, ms = 500){
                     reject(new Error('操作失败，请求超时'));
               
 
-            }, 500)
+            }, ms)
 
 
 
@@ -126,7 +126,7 @@ timeoutAjax(getUsr).then( (result) => {
 
     console.log(result);
 }).catch( (err) => {
-
+       console.log(666);
        console.log(err);
    }
 );
