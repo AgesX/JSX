@@ -71,7 +71,9 @@ function getList(userK){
 
 
 
+// 出结果，都 ok
 
+// 或者，有一个出错了
 
 
 
