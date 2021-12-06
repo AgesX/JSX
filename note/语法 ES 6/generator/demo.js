@@ -41,6 +41,15 @@ function * gen(){
 
 
 
+let g = gen();
+
+// console.log(g.next());
 
 
+g.next().value.then( (data) => {
+    console.log(data);
+    g.next(data);
+});
 
+
+// 
