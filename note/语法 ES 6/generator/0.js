@@ -24,6 +24,17 @@ let prepare = gen();
 
 
 
+// 此时， 执行 generator 函数体，里面的代码
+prepare.next();
+
+
+
+
+
+
+//
+
+
 
 //  function* + 函数名 + 函数体
 
