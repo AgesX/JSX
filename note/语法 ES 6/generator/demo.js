@@ -13,10 +13,10 @@ function mockAjax(method, url, data){
             let result = {
                 status: 666,
                 msg: '干',
-                data: []
+                data: data
             };
 
-            resolve(result + '\n' + url + '\n\n');
+            resolve(result);
             
 
         }, 1000)
@@ -47,6 +47,7 @@ let g = gen();
 
 
 g.next().value.then( (data) => {
+    console.log(data.data.kk);
     console.log(data);
     g.next(data);
 });
