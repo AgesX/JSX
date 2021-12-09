@@ -76,6 +76,10 @@ function run(genX){
         // 是一个  Promise 对象， 的实例
         if( result.value instanceof  Promise ){
 
+            // 递归
+            // 感觉，这里有一个 zoom 动画
+            // 方法，调用方法
+            // 被调用的，缩小，进入这里
             result.value.then(iterator);
 
 
