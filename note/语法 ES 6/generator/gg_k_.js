@@ -47,7 +47,7 @@ function * gen(){
 let g = gen();
 
 
-
+// 参数是，一个 generator 函数
 function run(genX){
 
 
@@ -69,12 +69,12 @@ function run(genX){
 
 
 
-        result = g.next();
+        result = g.next(params);
 
         // 是一个  Promise 对象， 的实例
         if( result.value() instanceof  Promise ){
 
-
+            result.value().then(iterator);
 
 
         }
