@@ -33,10 +33,12 @@ function * gen(){
 
     // getRole , 是调用 .next 方法， 传入的 data
     console.log(getRole);
-    let words = yield mockAjax('GET', '/product?roleK=' + getRole.data.kk,  [{ words: '不要怂' }])
+    let words = yield mockAjax('GET', '/product?roleK=' + getRole.data.kk,  { words: '不要怂' })
 
 
     console.log(words);
+    let result = yield mockAjax('GET', '/bee?bee=' + words.data.words,  [{ fight: '干到底' }])
+    console.log(result);
 }
 
 
