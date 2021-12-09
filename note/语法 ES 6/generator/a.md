@@ -68,5 +68,5 @@ generator 函数
 
 
 
-
+generator 有着流程，和章法
 
