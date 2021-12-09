@@ -31,6 +31,7 @@ function * gen(){
    
     let getRole = yield mockAjax('GET', '/role?usrID=' + 666,  { kk : 13 } )
 
+    // getRole , 是调用 .next 方法， 传入的 data
 
     let words = yield mockAjax('GET', '/product?roleK=' + getRole.kk,  [{ words: '不要怂' }])
 
@@ -66,6 +67,9 @@ g.next().value.then( (data) => {
 
 
 // 
+
+
+
 
 
 
