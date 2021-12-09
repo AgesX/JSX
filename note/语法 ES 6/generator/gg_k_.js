@@ -72,9 +72,9 @@ function run(genX){
         result = g.next(params);
 
         // 是一个  Promise 对象， 的实例
-        if( result.value() instanceof  Promise ){
+        if( result.value instanceof  Promise ){
 
-            result.value().then(iterator);
+            result.value.then(iterator);
 
 
         }
@@ -97,7 +97,7 @@ function run(genX){
 
 
 
-
+run(gen);
 
 
 
