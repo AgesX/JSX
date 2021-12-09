@@ -58,18 +58,19 @@ g.next().value.then( (data) => {
     //  promise . call back . result
 
 
-    console.log(data.data.kk);
-    console.log(data);
+  //  console.log(data.data.kk);
+  //  console.log(data);
     let haha = g.next(data);
-      console.log(haha);
+   //   console.log(haha);
       
       // 返回一个 Promise 对象
     return haha.value;
 }).then( (data) => {
 
-    console.log(data);
+    console.log('666', data);
 
-    
+    let haha = g.next(data);
+ //     console.log(haha);
     
 });
 
