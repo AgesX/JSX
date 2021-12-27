@@ -1,4 +1,4 @@
-import React, { Component } from  'React';
+import React, { Component } from  'react';
 
 
 class Button extends Component{
@@ -20,8 +20,8 @@ class Button extends Component{
 
     render(){
         const { color } = this.state;
-
-        return <Button style={{ color }} onClick={this.onClick} > 点击 </Button>
+        //  onClick, C 大写， react 的写法
+        return <button style={{ color }} onClick={this.onClick} > 点击 </button>
 
     }
 
@@ -31,6 +31,9 @@ class Button extends Component{
 
 }
 
+
+
+export default Button;
 
 
 
