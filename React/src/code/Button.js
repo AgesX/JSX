@@ -21,12 +21,15 @@ class Button extends Component {
   };
 
   render() {
+    const {title} = this.props;
     const { color, background } = this.state;
     //  onClick, C 大写， react 的写法
     return (
       <button style={{ color, background }} onClick={this.onClick}>
         {" "}
         点击{" "}
+
+        {title}
       </button>
     );
   }
