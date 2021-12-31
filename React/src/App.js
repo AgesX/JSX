@@ -35,9 +35,6 @@ class App extends React.Component {
 
 
 
-
-// StyleSheet, 管理样式对象
-
 const styles = StyleSheet.create({
     container: {
       width: 200,
