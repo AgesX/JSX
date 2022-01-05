@@ -14,7 +14,7 @@ console.log(result);
 
 
 
-function print() : void{
+function printX() : void{
     console.log(666);
 }
 
