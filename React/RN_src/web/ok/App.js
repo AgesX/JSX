@@ -32,21 +32,18 @@ function getMovie() {
 
 
 export default class App extends React.Component { // FlatList,   data 接收一个数组
-    // 静态的
-    // 不好
-    movieStored = []
 
+    
 
-
-
-    // 应该使用
-    // 动态的
     // state 等价于，另外一种
-    state = {
+    constructor(props){
+        super(props);
+        this.state = {
+            movieStored: [],
+        };
 
-        movieStored: [],
+    }
 
-    };
 
     films() {
         // fetch 函数，
@@ -63,8 +60,8 @@ export default class App extends React.Component { // FlatList,   data 接收一
             { 
                 this.setState({
                     movieStored: data.movies,
-                });
-                console.log( '---      ---  this.movieStored   --     ---' , this.movieStored);
+                }); 
+                console.log( '---      ---  this.movieStored   --     ---' , data.movies);
             }
         )
         .catch((err) => {
@@ -86,7 +83,7 @@ export default class App extends React.Component { // FlatList,   data 接收一
             <Text style={
                 styles.txtMini
             }>
-                item
+                {item.title} , {item.releaseYear}
             </Text>
         )
 
@@ -101,7 +98,7 @@ export default class App extends React.Component { // FlatList,   data 接收一
     componentDidMount(){
 
 
-
+        this.films();
 
 
     }
@@ -135,7 +132,7 @@ export default class App extends React.Component { // FlatList,   data 接收一
                     </Text>
                 </TouchableOpacity>
                 <FlatList data={
-                        ['占位 ']
+                         this.state.movieStored
                     }
                     renderItem={
                         this.itemShow
