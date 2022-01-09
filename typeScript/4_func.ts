@@ -1,10 +1,26 @@
-function combine(a: string, b: string): string{
+function combine(a: string, b?: string): string{
+    if (b && b !== null && b != undefined){
+
+        //   如果  b  存在
 
 
+        return a + b
+    }
+    else{
+        return a
+    }
 
-    return a + b
+    
 
 }
+
+
+
+
+
+let aaa = combine('1001');
+
+console.log(aaa);
 
 
 
