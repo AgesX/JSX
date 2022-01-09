@@ -16,16 +16,16 @@ function combine(a: string, b?: string): string{
 
 
 
-let aaa = combine('1001');
+var aaa = combine('1001');
+
+
+
+aaa = combine('st  X  ', '   deng')
+
+
+
 
 console.log(aaa);
-
-
-
-
-
-
-
 
 
 
