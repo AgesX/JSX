@@ -8,9 +8,9 @@ interface DarkDuck{
 
 
     // 可选属性
-    title?: string
+    title?: string,
 
-
+    say: () => string,
 }
 
 
@@ -21,6 +21,10 @@ let eight: DarkDuck = {
     skill: "digger",
     age: "202",
     // title: "master"
+    say: function(){
+        return this.title
+    }
+}
 }
 
 
@@ -28,7 +32,11 @@ let eight: DarkDuck = {
 let nine: DarkDuck = {
     skill: "digger",
     age: "202",
-    title: "master"
+    title: "master",
+    say: function(){
+        return this.title
+    }
+}
 }
 
 
@@ -55,6 +63,19 @@ interface DarkSwan{
 }
 
 
+interface Xxx extends  DarkSwan{
+    rule: string[];
+
+
+
+}
+
+
+
+
+
+
+
 
 
 let ten: DarkSwan = {
@@ -64,6 +85,15 @@ let ten: DarkSwan = {
     title: "master"
 }
 
+
+
+let tenXXx: Xxx = {
+    k: 666,
+    skill: "digger",
+    age: "202",
+    title: "master",
+    rule: ["stay"],
+}
 
 // 只读属性，
 
@@ -82,7 +112,7 @@ let xxx: DarkSwan = {
 
 
 
-// 可索引的类型
+// 可索引的属性
 
 interface BirdMap{
     // 里面的 k , 是动态的
@@ -90,11 +120,32 @@ interface BirdMap{
     [k: string]: DarkSwan
 }
 
-let birdMap = {
+let birdMap : BirdMap = {
     [ten.k]: ten,
     [xxx.k]: xxx
 
 }
+
+
+
+
+
+interface BirdMapNo{
+
+    [k: string]: DarkSwan
+    // title: String
+}
+
+let birdMapNo : BirdMapNo = {
+    [ten.k]: ten,
+    [xxx.k]: xxx,
+    // title: 'ninja'
+}
+
+
+
+
+
 
 
 
