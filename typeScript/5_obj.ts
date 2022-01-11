@@ -94,6 +94,9 @@ interface WarMachine{
 // 前面加个 I,  表示接口
 // 接口， define
 // 接口，用来描述，这个对象，有哪些属性
+
+// 接口，对象的形状
+
 interface IWarMachine{
     skill: string,
     age: string,
@@ -104,6 +107,15 @@ interface IWarMachine{
 
 
 
+interface Duck{
+    skill: string,
+    age: string,
+    title: string
+
+
+}
+
+
 let fighter: IWarMachine = {
     skill: "digger",
     age: "202",
@@ -111,13 +123,30 @@ let fighter: IWarMachine = {
 }
 
 
+let six: Duck = {
+    skill: "digger",
+    age: "202",
+    title: "master"
+}
+
 function getF(usr: IWarMachine){
     return usr.title
 }
 
 
 
+let result = getF(six)
 
+console.log(result)
+
+
+
+
+
+
+// 如果两个接口，定义的属性一致，
+
+// ts 就认为，这两个接口，是同一个
 
 
 
