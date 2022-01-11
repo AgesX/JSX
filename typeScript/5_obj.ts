@@ -11,10 +11,6 @@ let soldier :  {
 /*
 
 
-// 接口
-
-
-
 
 // 内联类型
 
@@ -61,6 +57,73 @@ function weapon(user:  {
     return user.age
 
 }
+
+
+
+
+/*
+
+
+// 接口
+
+
+
+
+*/ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+interface WarMachine{
+
+
+
+}
+
+
+
+// 前面加个 I,  表示接口
+// 接口， define
+// 接口，用来描述，这个对象，有哪些属性
+interface IWarMachine{
+    skill: string,
+    age: string,
+    title: string
+
+
+}
+
+
+
+let fighter: IWarMachine = {
+    skill: "digger",
+    age: "202",
+    title: "master"
+}
+
+
+function getF(usr: IWarMachine){
+    return usr.title
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
