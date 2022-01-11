@@ -150,11 +150,40 @@ console.log(result)
 
 
 
+// duck 模型
+// ts , 不会根据， 接口的名字，来判断
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+let seven: Duck = {
+    skill: "digger",
+    age: "202",
+    // title: "master"
+}
+
+
+
+
+*/
 
 
